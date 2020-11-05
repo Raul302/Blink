@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\studentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Home/home');
 });
+Route::get('/students', [studentController::class, 'index']);
+Route::post('/students/save', [studentController::class, 'savestudents']);
